@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./stateprovider";
+import Payment from "./Payment";
 
 function App() {
   const [{}, dispatch] = useStateValue();
