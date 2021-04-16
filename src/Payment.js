@@ -34,6 +34,8 @@ function Payment() {
 		getClientSecret();
 	}, [basket]);
 
+	console.log("The SECRET IS >>>", clientSecret);
+
 	const handleSubmit = async (event) => {
 		// Fancy Stripe
 		event.preventDefault();
