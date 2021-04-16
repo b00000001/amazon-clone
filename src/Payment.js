@@ -22,15 +22,16 @@ function Payment() {
 	const [clientSecret, setClientSecret] = useState(true);
 
 	useEffect(() => {
-		//  generate the special stripe secret which allows us to charge a customer
+		//generate special key
 		const getClientSecret = async () => {
 			const response = await axios({
 				method: "post",
-				// stripe expects the total in a currencies subunits
-				url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+				// expects total in currencies subunits
+				url: `payments/create?total=${getBasketTotal(basket) * 100}`,
 			});
 			setClientSecret(response.data.clientSecret);
 		};
+
 		getClientSecret();
 	}, [basket]);
 
